@@ -1,0 +1,16 @@
+[
+  {
+    "title": "A strong sales manager coaches the specific behavior",
+    "body": "A sales leader should be able to name the metric, behavior, and business effect. My next step: review qualification calls using a checklist.",
+    "module": "sales",
+    "source": "Example imported note (sample data)",
+    "tags": ["sales-management", "coaching"]
+  },
+  {
+    "title": "The highest leverage task is not always the loudest",
+    "body": "Find the actual process bottleneck before replacing an entire operating system.",
+    "module": "operations",
+    "source": "Example imported note (sample data)",
+    "tags": ["operations", "systems"]
+  }
+]
