@@ -1,65 +1,85 @@
-# Business Mastery — Learning Academy
+# Business Mastery — The Business Learning Workspace
 
-An independent, static, responsive learning platform for mastering leadership, hiring, recruiting, culture, training, and building teams that scale. The first course is **People & Leadership**, structured around notes from an Alex Hormozi × Steven Bartlett interview. It is an educational interpretation, not an official or affiliated product.
+A private-first, responsive learning application organized into five business disciplines:
 
-## What's inside
+1. **Marketing** — positioning, customer attention, campaign testing and diagnosis
+2. **Sales** — offers, pipeline management, first response and customer lifetime value
+3. **Operations** — process quality, constraints, SOPs, continuous improvement
+4. **Team Building** — culture, recruiting, hiring, leadership and coaching
+5. **Strategy & Product** — business models, product validation, focus and leverage
 
-- Four guided chapters containing **12 lessons**.
-- Actionable principles and examples, based on the interview.
-- Knowledge checks **plus 12 realistic decision scenarios** with explanations and retries.
-- A practice lab for revisiting the scenarios independently.
-- Three editable worksheets: **Stop · Start · Keep**, **Consultant hiring canvas**, and **Document · Demonstrate · Duplicate**.
-- Persistent completions, knowledge-check answers, scenario progress, lesson reflections, and worksheet drafts via browser `localStorage`.
-- Automatic migration of existing progress from the original `business-mastery-v1` key to `business-mastery-v2`.
-- Exportable lesson notes; copyable worksheets.
-- Responsive navigation and keyboard-accessible controls.
+## What's inside (v3)
+
+- A personal dashboard and five topic-specific dashboards
+- **29 curated lessons**, organized into topic tracks
+  - The original **12 Team Building** lessons are preserved under their original IDs
+  - **17 new starter lessons** across the other four modules, adapted from the Alex Hormozi × Steven Bartlett transcript supplied for this project
+- **29 decision scenarios**, lesson quizzes, actions and reflective notes
+- Global search, topic filters, bookmarks, curriculum and progress tracking
+- **7 interactive worksheets** in the playbook toolkit
+- **Knowledge Inbox**: capture, edit, classify and delete personal notes
+- Import individual **Markdown, text, or JSON note-list files** into the inbox
+- Export/restore a complete workspace **JSON backup**, or export study notes as Markdown
+- Responsive reading interface, usable without a JavaScript build pipeline
 
 ## Run locally
 
-Open `index.html` in a browser, or from the project root:
+Open a terminal in the root of this repository and run:
 
 ```bash
 python -m http.server 8000
 ```
 
-Then open http://localhost:8000.
+Open http://localhost:8000 in your browser. The app is static (HTML, CSS, vanilla JS); no npm installation, server database or account is required.
 
-No packages, build process, server database, or accounts are necessary.
+Open `index.html` directly if needed, but localhost is recommended for more predictable browser storage behavior.
 
-## File structure
+## Content architecture
 
 ```text
 business-mastery/
-├── index.html       # Application shell and navigation
-├── styles.css       # Responsive design system
-├── content.js       # Original 12-lesson source-derived content
-├── learning.js      # Chapter structure, practice cases, worksheet schemas
-├── app.js           # Navigation, interactive learning and browser state
-├── .gitignore
+├── index.html        # Application shell
+├── styles.css        # Responsive UI
+├── app.js            # Navigation and interactions
+├── content.js        # Original 12 Team Building lessons
+├── learning.js       # Original cases, actions and worksheets
+├── catalog.js        # Five modules + 17 new lessons + additional exercises
+├── docs/
+│   ├── taxonomy.md
+│   ├── knowledge-schema.md
+│   └── notion-migration.md
 └── README.md
 ```
 
-## Progress and privacy
+To add a lesson, define its content in `catalog.js`, add the ID to the correct `moduleCatalog[].tracks[].ids` list, and provide a decision scenario under `additionalCases`. The existing team-building lesson IDs are stable to preserve browser progress.
 
-Browser data is saved **only on the current device/browser**. It does not sync through GitHub and is not uploaded to a server. Export important notes regularly. Worksheet content can be copied for backup.
+## Personal data and backups
 
-## Recommended Git workflow
+Your completions, bookmarks, responses, lesson notes, worksheets and inbox items live in **localStorage in your current browser**. They are **not** automatically synced to GitHub, Notion or another device. Use **Knowledge Inbox → Download full backup** to keep a copy, and **Restore a backup** to import it later.
 
-From your local repository in Cursor:
+The app migrates saved progress from `business-mastery-v2` (or `business-mastery-v1`) on first load. Do not delete browser data before exporting a backup.
+
+The Knowledge Inbox importer currently supports `.md`, `.markdown`, `.txt`, and JSON arrays of notes (or an object with a `notes`/`items` array). It does **not** currently connect to Notion's API or parse Notion ZIP exports. See `docs/notion-migration.md` for the planned migration.
+
+## Provenance
+
+The initial learning content is an independent educational adaptation of the transcript supplied for the project (Alex Hormozi in conversation with Steven Bartlett). It is **not an official course or verbatim transcript**. The content in Marketing, Sales, Operations and Strategy & Product is a starter curriculum; the user's private Notion content has **not yet been imported**.
+
+## Local ↔ GitHub workflow
+
+Before editing locally:
+
+```bash
+git pull --ff-only
+```
+
+After your changes:
 
 ```bash
 git status
-git pull --ff-only
-# Copy the updated files into this folder (do not replace .git)
-git add index.html styles.css app.js learning.js README.md .gitignore
-git commit -m "feat: build interactive Business Mastery academy"
+git add index.html styles.css app.js content.js learning.js catalog.js README.md docs .gitignore
+git commit -m "feat: expand business mastery into five learning disciplines"
 git push origin main
 ```
 
-When making further changes, **pull before editing** and inspect `git status` before staging. If `git pull --ff-only` rejects a merge, resolve the divergence rather than forcing a push.
-
-## Future directions
-
-- More collections: Strategy, Marketing, Sales, Finance, Systems.
-- Short mastery exercises and spaced review.
-- Optional authentication and cross-device sync **only if** that becomes worth the complexity.
+If Cursor has unrelated changes, inspect `git status` carefully before staging. The repo URL is https://github.com/Davidoo-7/business-mastery.
