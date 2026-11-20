@@ -1,49 +1,63 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#0b111a" />
-  <meta name="description" content="Business Mastery — a practical academy for learning leadership, recruiting, culture, and building exceptional teams." />
-  <title>Business Mastery — Your private business academy</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#17232b">
+  <meta name="description" content="Business Mastery is a private-first business learning workspace for Marketing, Sales, Operations, Team Building, and Strategy & Product.">
+  <title>Business Mastery — Your business learning workspace</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<div class="app-shell">
-  <aside class="sidebar" id="sidebar">
-    <a class="brand" href="#home" aria-label="Business Mastery home">
-      <span class="brand-logo">B<span>✦</span></span>
-      <span class="brand-name">BUSINESS <b>MASTERY</b><small>THE LEARNING ACADEMY</small></span>
-    </a>
-    <div class="side-kicker">WORKSPACE</div>
-    <nav class="main-nav" aria-label="Primary navigation">
-      <a class="nav-link" data-route="home" href="#home"><span class="nav-icon">⌂</span> Dashboard</a>
-      <a class="nav-link" data-route="curriculum" href="#curriculum"><span class="nav-icon">▦</span> Curriculum</a>
-      <a class="nav-link" data-route="practice" href="#practice"><span class="nav-icon">◇</span> Practice lab</a>
-      <a class="nav-link" data-route="toolkit" href="#toolkit"><span class="nav-icon">⚒</span> Playbook toolkit</a>
-      <a class="nav-link" data-route="notes" href="#notes"><span class="nav-icon">▤</span> My notes</a>
-    </nav>
-    <div class="side-kicker course-kicker">YOUR COLLECTIONS</div>
-    <a href="#curriculum" class="collection-item"><span class="collection-symbol">♟</span><span>People & Leadership<small>4 chapters · 12 lessons</small></span><span class="collection-arrow">↗</span></a>
-    <div class="future-collection">◈ <span>Strategy & Growth</span><small>COMING NEXT</small></div>
-    <div class="future-collection">◈ <span>Sales & Marketing</span><small>PLANNED</small></div>
-    <div class="future-collection">◈ <span>Systems & Execution</span><small>PLANNED</small></div>
-    <div class="sidebar-spacer"></div>
-    <div class="side-progress"><div class="side-progress-heading"><span>YOUR PROGRESS</span><strong id="sidePercent">0%</strong></div><div class="progress-track"><div id="sideBar"></div></div><span id="progressCaption">0 / 12 lessons completed</span></div>
-    <div class="side-caption">An independent study project based on business interviews and practical management principles.</div>
-  </aside>
-  <div class="main-column">
-    <header class="topbar"><div class="topbar-left"><button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false">☰</button><span class="breadcrumbs" id="breadcrumbs">ACADEMY <span>/</span> DASHBOARD</span></div><div class="topbar-right"><span class="status-dot"></span><span class="desktop-label">PERSONAL LEARNING SPACE</span><span class="profile-avatar">DW</span></div></header>
-    <main id="content" tabindex="-1"></main>
-    <footer class="site-footer">BUSINESS MASTERY <span>·</span> LEARN DEEPLY. APPLY DELIBERATELY. <span>·</span> YOUR PROGRESS STAYS IN THIS BROWSER.</footer>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar" aria-label="Sidebar">
+      <a href="#dashboard" class="brand" aria-label="Business Mastery dashboard">
+        <span class="brand-emblem">B<span>✦</span></span>
+        <span class="brand-type">BUSINESS <strong>MASTERY</strong><small>YOUR KNOWLEDGE OPERATING SYSTEM</small></span>
+      </a>
+      <div class="sidebar-scroll">
+        <div class="sidebar-label">WORKSPACE</div>
+        <nav class="primary-nav" aria-label="Main navigation">
+          <a href="#dashboard" data-nav="dashboard"><span class="nav-symbol">◫</span> Overview</a>
+          <a href="#library" data-nav="library"><span class="nav-symbol">▦</span> Knowledge library</a>
+          <a href="#path" data-nav="path"><span class="nav-symbol">◈</span> Learning path</a>
+          <a href="#practice" data-nav="practice"><span class="nav-symbol">◇</span> Practice lab</a>
+          <a href="#toolkit" data-nav="toolkit"><span class="nav-symbol">▤</span> Playbook tools</a>
+        </nav>
+        <div class="sidebar-label sidebar-label-spaced">BUSINESS DISCIPLINES</div>
+        <nav id="moduleNav" class="module-nav" aria-label="Business topics"></nav>
+        <div class="sidebar-label sidebar-label-spaced">PERSONAL SPACE</div>
+        <nav class="primary-nav" aria-label="Personal learning resources">
+          <a href="#inbox" data-nav="inbox"><span class="nav-symbol">＋</span> Knowledge inbox</a>
+          <a href="#notes" data-nav="notes"><span class="nav-symbol">✎</span> My study notes</a>
+        </nav>
+      </div>
+      <div class="sidebar-bottom">
+        <div class="side-progress"><div class="side-progress-top"><span>LEARNING PROGRESS</span><strong id="sidePercent">0%</strong></div><div class="progress-bar"><span id="sideBar"></span></div><p id="sideCaption">0 lessons completed</p></div>
+        <p class="privacy-caption"><span class="secure-dot"></span> Private-first · Saved in this browser</p>
+      </div>
+    </aside>
+    <div class="main-frame">
+      <header class="topbar">
+        <div class="topbar-leading"><button id="menuToggle" class="icon-button mobile-menu" aria-label="Open menu" aria-expanded="false">☰</button><div class="breadcrumbs" id="breadcrumbs">WORKSPACE <span>/</span> OVERVIEW</div></div>
+        <div class="topbar-actions">
+          <label class="global-search" for="globalSearch"><span aria-hidden="true">⌕</span><input id="globalSearch" type="search" autocomplete="off" placeholder="Search knowledge..." aria-label="Search all lessons and frameworks"><kbd>/</kbd></label>
+          <button id="captureShortcut" class="capture-button"><span>＋</span> Capture idea</button>
+          <span class="profile-mark" aria-label="Personal workspace">BM</span>
+        </div>
+      </header>
+      <main id="content" tabindex="-1"></main>
+      <footer class="site-footer"><span>BUSINESS MASTERY</span><span>A practical library for learning, remembering, and applying business principles.</span></footer>
+    </div>
   </div>
-</div>
-<div class="mobile-scrim" id="mobileScrim" hidden></div>
-<script src="content.js"></script>
-<script src="learning.js"></script>
-<script src="app.js"></script>
+  <div id="mobileScrim" class="mobile-scrim" hidden></div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="content.js"></script>
+  <script src="learning.js"></script>
+  <script src="catalog.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
