@@ -24,7 +24,7 @@ Allowed `module` values:
 - `team-building`
 - `strategy-product`
 
-`title`, `body`, `module`, `source`, `tags` and `createdAt` are optional for the basic importer, but meaningful values are strongly recommended. Missing or unknown modules default to **Strategy & Product**, so review imported notes before relying on classifications.
+`title`, `body`, `module`, `source`, `tags` and `createdAt` are optional for the basic importer, but meaningful values are strongly recommended. Missing or unknown modules default to **Strategy**, so review imported notes before relying on classifications.
 
 Each JSON or text import remains an uncurated **knowledge note**, not a lesson. It does not create a quiz or practice scenario automatically. The app limits files to 1 MB each and accepts up to 30 files per import action.
 
@@ -43,3 +43,5 @@ The full workspace backup is a different format:
 ```
 
 Use **Restore a backup** for the full format, not the ordinary note importer. Restoring replaces current browser state after confirmation; export current data first.
+
+**Six-discipline update:** Product uses module ID `product`; Strategy retains legacy module ID `strategy-product` for backward compatibility. Review imported classifications and intentionally move product-related notes to Product.
