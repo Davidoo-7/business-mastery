@@ -2,7 +2,7 @@
 
 ## Current capabilities
 - You can capture and organize notes directly in the Knowledge Inbox.
-- You can import **individual Markdown or text files**, or **flat JSON note lists**, and classify them into the five disciplines.
+- You can import **individual Markdown or text files**, or **flat JSON note lists**, and classify them into the six disciplines.
 - No connection to Notion has been made and no user notes have been migrated yet.
 - Notion ZIP export ingestion, rich block rendering, attachment handling and direct synchronization are **not implemented** in this static version.
 
@@ -26,3 +26,9 @@ The current app is browser-local. Do not put confidential internal Notion pages,
 - Optional account-based storage and multi-device sync
 - Notion ZIP/Markdown directory import or authorized Notion API connector
 - AI-assisted categorization with human confirmation before publishing
+
+## Product and Strategy separation (v4)
+
+There are now six canonical categories. The legacy identifier `strategy-product` is intentionally retained internally for **Strategy**, so existing saved notes keep their category; the new category is `product` for **Product**. Review previously imported notes under Strategy and manually reclassify product notes. The existing lesson ID `strategy-product-love` is retained and now belongs to Product.
+
+Source-derived videos are stored as Markdown in `docs/sources` and converted into curated lessons with source metadata; neither raw Notion exports nor customer information should be committed to the public repository.

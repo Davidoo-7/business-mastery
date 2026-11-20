@@ -1,85 +1,56 @@
-# Business Mastery — The Business Learning Workspace
+# Business Mastery — Your business learning workspace
 
-A private-first, responsive learning application organized into five business disciplines:
+A private-first static learning application organized into **six disciplines**:
 
-1. **Marketing** — positioning, customer attention, campaign testing and diagnosis
-2. **Sales** — offers, pipeline management, first response and customer lifetime value
-3. **Operations** — process quality, constraints, SOPs, continuous improvement
+1. **Marketing** — positioning, attention, campaign testing and diagnosis
+2. **Sales** — offers, sales execution, pipeline management, customer success
+3. **Operations** — SOPs, constraints, quality, measurable execution
 4. **Team Building** — culture, recruiting, hiring, leadership and coaching
-5. **Strategy & Product** — business models, product validation, focus and leverage
+5. **Strategy** — business fundamentals, first principles, prioritization and focus
+6. **Product** — product discovery, customer surplus, models versus methods, retention and sustainable scaling
 
-## What's inside (v3)
+## Contents
 
-- A personal dashboard and five topic-specific dashboards
-- **29 curated lessons**, organized into topic tracks
-  - The original **12 Team Building** lessons are preserved under their original IDs
-  - **17 new starter lessons** across the other four modules, adapted from the Alex Hormozi × Steven Bartlett transcript supplied for this project
-- **29 decision scenarios**, lesson quizzes, actions and reflective notes
-- Global search, topic filters, bookmarks, curriculum and progress tracking
-- **7 interactive worksheets** in the playbook toolkit
-- **Knowledge Inbox**: capture, edit, classify and delete personal notes
-- Import individual **Markdown, text, or JSON note-list files** into the inbox
-- Export/restore a complete workspace **JSON backup**, or export study notes as Markdown
-- Responsive reading interface, usable without a JavaScript build pipeline
+- Six dashboards and discipline-specific learning tracks
+- **36 lessons** with knowledge checks, scenarios, practical action prompts, and saved progress
+- An eight-lesson **Product** curriculum (including an existing product-discovery lesson moved from Strategy without changing its ID)
+- Video-derived [Product source notes](docs/sources/product-retention-hormozi.md) and an in-app source-notes page
+- Interactive **Retention Lab** to compare monthly churn scenarios for recurring products
+- Two new Product worksheets: Customer Surplus Audit and Retention Improvement Plan
+- Full library search, bookmarks, practice lab, worksheets, personal reflections and Knowledge Inbox
+- Local browser storage with portable JSON backup and selected file imports for future Notion migration
 
 ## Run locally
 
-Open a terminal in the root of this repository and run:
+From the repository root:
 
 ```bash
 python -m http.server 8000
 ```
 
-Open http://localhost:8000 in your browser. The app is static (HTML, CSS, vanilla JS); no npm installation, server database or account is required.
+Open http://localhost:8000 in your browser. No dependencies or build step are needed.
 
-Open `index.html` directly if needed, but localhost is recommended for more predictable browser storage behavior.
+## Key files
 
-## Content architecture
+- `index.html`: app shell and script loading
+- `styles.css`: styles and mobile layout
+- `content.js`, `learning.js`: original team-building lesson content
+- `catalog.js`: six-discipline taxonomy and earlier lessons
+- `product.js`: Product lessons, decision cases, worksheets and video-note source catalog
+- `product-ui.js`: video-notes reader and interactive retention calculator
+- `app.js`: navigation, lesson rendering, interactive learning and browser state
+- `docs/sources/product-retention-hormozi.md`: detailed source-derived notes and caveats
+- `docs/taxonomy.md`: discipline/track structure and curation principles
+- `docs/notion-migration.md`: future import mapping
 
-```text
-business-mastery/
-├── index.html        # Application shell
-├── styles.css        # Responsive UI
-├── app.js            # Navigation and interactions
-├── content.js        # Original 12 Team Building lessons
-├── learning.js       # Original cases, actions and worksheets
-├── catalog.js        # Five modules + 17 new lessons + additional exercises
-├── docs/
-│   ├── taxonomy.md
-│   ├── knowledge-schema.md
-│   └── notion-migration.md
-└── README.md
-```
+## Data, compatibility and security
 
-To add a lesson, define its content in `catalog.js`, add the ID to the correct `moduleCatalog[].tracks[].ids` list, and provide a decision scenario under `additionalCases`. The existing team-building lesson IDs are stable to preserve browser progress.
+The app stores progress, notes and worksheet entries in the browser (`localStorage`, key `business-mastery-v3`). It does not upload them to GitHub, and there is no account or server database. The prior 12 Team Building lesson IDs are unchanged; the existing `strategy-product-love` ID is also unchanged and now appears under Product. Existing progress and saved work are retained in the same browser.
 
-## Personal data and backups
+**Important:** The GitHub repository may be public. Do not commit confidential Notion notes, customer records, or credentials to this repository. Export and back up your browser data regularly.
 
-Your completions, bookmarks, responses, lesson notes, worksheets and inbox items live in **localStorage in your current browser**. They are **not** automatically synced to GitHub, Notion or another device. Use **Knowledge Inbox → Download full backup** to keep a copy, and **Restore a backup** to import it later.
+## Source boundaries
 
-The app migrates saved progress from `business-mastery-v2` (or `business-mastery-v1`) on first load. Do not delete browser data before exporting a backup.
+The existing Team Building and early business lessons are adapted from the user-supplied Alex Hormozi / Steven Bartlett transcript. The new Product curriculum comes from a separate user-supplied Alex Hormozi video transcript. Lessons attribute the relevant source in the app. Scenarios, calculators, and domain-specific examples are teaching adaptations, not claims from the speaker.
 
-The Knowledge Inbox importer currently supports `.md`, `.markdown`, `.txt`, and JSON arrays of notes (or an object with a `notes`/`items` array). It does **not** currently connect to Notion's API or parse Notion ZIP exports. See `docs/notion-migration.md` for the planned migration.
-
-## Provenance
-
-The initial learning content is an independent educational adaptation of the transcript supplied for the project (Alex Hormozi in conversation with Steven Bartlett). It is **not an official course or verbatim transcript**. The content in Marketing, Sales, Operations and Strategy & Product is a starter curriculum; the user's private Notion content has **not yet been imported**.
-
-## Local ↔ GitHub workflow
-
-Before editing locally:
-
-```bash
-git pull --ff-only
-```
-
-After your changes:
-
-```bash
-git status
-git add index.html styles.css app.js content.js learning.js catalog.js README.md docs .gitignore
-git commit -m "feat: expand business mastery into five learning disciplines"
-git push origin main
-```
-
-If Cursor has unrelated changes, inspect `git status` carefully before staging. The repo URL is https://github.com/Davidoo-7/business-mastery.
+The video argues for products that customers keep buying and cites 1–2% monthly churn as an aspiration for certain recurring models. This is not a benchmark for every industry. The video's staged revenue ranges are illustrative, and the video mentions—but does not detail—an eight-Cs framework.

@@ -1,38 +1,44 @@
 # Business Mastery — Knowledge taxonomy
 
-The five disciplines are intentionally broad enough to absorb material from interviews, books, Notion pages and lived experience. The organization is **Discipline → Track → Lesson → Exercise**. One lesson has one canonical ID; links can connect related topics without copying the source material into several places.
+The six disciplines are broad enough to absorb interviews, books, Notion pages and personal experience. Structure: **Discipline → Track → Lesson → Exercise**. Stable lesson IDs preserve progress and bookmarks. Cross-discipline links should point to a canonical lesson rather than duplicate its content.
 
 ## Marketing
-- **Attention & Positioning:** four acquisition engines, differentiation and brand narrative
-- **Campaigns & Optimization:** test volume, better creative, funnel analytics and experimentation
-- Potential future tracks: pricing communication, distribution, partnerships, SEO, paid media, organic media
+- **Attention & Positioning:** acquisition engines, differentiation and narrative
+- **Campaigns & Optimization:** experiments, media, metrics and testing
+- Potential later: SEO, paid media, partnerships, lifecycle marketing
 
 ## Sales
-- **The Buying Journey:** inquiry response, discovery, offers and sales conversations
-- **Conversion & Lifetime Value:** pipeline, coaching, customer success, retention, referrals and expansion
-- Potential future tracks: prospecting, objection handling, negotiation, account management, sales leadership
+- **The Buying Journey:** inquiries, discovery and compelling offers
+- **Conversion & Lifetime Value:** sales metrics, follow-up, success, referrals and repeat sales
+- Potential later: negotiation, objection handling, account management
 
 ## Operations
-- **Systems & Standards:** bottlenecks, handoffs, SOPs, quality assurance and roles
-- **Execution & Improvement:** structured testing, KPI cadence, automation and delegation
-- Potential future tracks: forecasting, supplier performance, finance operations, automation and process design
+- **Systems & Standards:** SOPs, quality, ownership, handoffs and constraints
+- **Execution & Improvement:** operating cadence, experiments, measurement, automation and delegation
+- Potential later: supplier management, finance operations, project delivery
 
 ## Team Building
-- **Culture & Candor:** standards, corrective feedback and difficult conversations
-- **Training & Development:** rapid feedback, Document–Demonstrate–Duplicate
-- **Hiring & Recruiting:** skill gaps, expert networks, consultant recruiting, hiring scorecards
-- **Leadership at Scale:** barrels/ammunition, delegation, team design and decision rights
+- **Culture & Candor:** standards, corrective feedback and hard conversations
+- **Training & Development:** feedback loops and Document–Demonstrate–Duplicate
+- **Hiring & Recruiting:** expert networks, consultant interviews and hiring scorecards
+- **Leadership at Scale:** decision rights, delegation and independent capacity
 
-## Strategy & Product
+## Strategy
 - **Ideas & Foundations:** the Three Ps, supply, demand and leverage
-- **Focus & Execution:** strategic prioritization, compounding advantage and entrepreneurial cycles
-- **Product & Customer Value:** deep user understanding, product quality, the referral-worthy result
-- Potential future tracks: competitive strategy, product discovery, market sizing, product positioning, innovation
+- **Focus & Execution:** long-term focus, prioritization and avoiding business-model hopping
+- Potential later: competitive strategy, business model design, market sizing, strategic bets
 
-## Curation guidelines
-- Capture raw notes in **Knowledge Inbox** with a module and source.
-- Keep source notes separate from polished lessons until reviewed.
-- Write a one-sentence takeaway, 2–4 short sections, one example and one action for each lesson.
-- Add a knowledge-check question and a realistic decision case.
-- Retain provenance: source title, creator, URL when available, and whether ideas are paraphrased or original.
-- Avoid duplicate lessons: use related links or cross-tags for ideas spanning multiple disciplines.
+## Product
+- **Product Discovery & Value:** real customer problems, product love, customer surplus and continuing usefulness
+- **Models & Monetization:** models versus methods, SaaS/service comparisons and business-model fit
+- **Retention-Led Growth:** promotion → product → scale, churn economics, customer feedback and iteration
+- Potential later: product management, positioning, roadmap design, experimentation, activation, onboarding, packaging
+
+## Source and curation rules
+- In the Knowledge Inbox, assign a discipline and retain the raw source.
+- Keep source notes and polished lessons separate and attributable.
+- Each lesson should provide the central idea, sections, quiz, scenario and a practical next action.
+- The product-retention video is a separate Hormozi source from the Hormozi/Bartlett interview.
+- Mark product examples, calculators and caveats as instructional applications rather than direct quotations.
+- Preserve existing IDs when reorganizing lessons. The ID `strategy-product-love` remains the same but is filed under Product.
+- Do not mistake proposed subscription churn benchmarks for universal industry standards.
