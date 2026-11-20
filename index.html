@@ -1,4 +1,49 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#10151e"><title>Business Mastery — The Learning Library</title><meta name="description" content="A practical, interactive business learning library. Master hiring, leadership, recruiting and culture."><link rel="stylesheet" href="styles.css"></head>
-<body><div class="app"><aside class="sidebar" id="sidebar"><a class="brand" href="#home"><span class="brandmark">B<span>✦</span></span><span>BUSINESS <b>MASTERY</b><small>THE KNOWLEDGE LIBRARY</small></span></a><div class="side-label">YOUR LIBRARY</div><nav class="nav"><button data-view="home" class="nav-item active"><span>◈</span> Overview</button><button data-view="path" class="nav-item"><span>▦</span> Learning path</button><button data-view="notes" class="nav-item"><span>▤</span> My notes</button></nav><div class="side-label">COLLECTIONS</div><button class="collection active"><span class="collection-icon">♟</span><span>People & Leadership<small>12 lessons</small></span></button><div class="upcoming">↗ &nbsp; Strategy & Growth <span>SOON</span></div><div class="upcoming">↗ &nbsp; Sales & Marketing <span>SOON</span></div><div class="upcoming">↗ &nbsp; Systems & Execution <span>SOON</span></div><div class="sidebar-bottom"><div class="sidebar-progress"><div class="tiny-label">YOUR PROGRESS <b id="sidePercent">0%</b></div><div class="track"><div id="sideBar"></div></div><small id="progressCaption">0 of 12 lessons completed</small></div><div class="source">Based on Alex Hormozi × Steven Bartlett<br><span>Personal learning notes · Not affiliated</span></div></div></aside>
-<div class="main"><header class="topbar"><button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button><span class="crumb">THE LIBRARY <span> / </span> PEOPLE & LEADERSHIP</span><div class="topright"><span class="live-dot"></span> SELF-PACED LEARNING <span class="avatar">DW</span></div></header><main id="content"></main></div></div><script src="content.js"></script><script src="app.js"></script></body></html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0b111a" />
+  <meta name="description" content="Business Mastery — a practical academy for learning leadership, recruiting, culture, and building exceptional teams." />
+  <title>Business Mastery — Your private business academy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<div class="app-shell">
+  <aside class="sidebar" id="sidebar">
+    <a class="brand" href="#home" aria-label="Business Mastery home">
+      <span class="brand-logo">B<span>✦</span></span>
+      <span class="brand-name">BUSINESS <b>MASTERY</b><small>THE LEARNING ACADEMY</small></span>
+    </a>
+    <div class="side-kicker">WORKSPACE</div>
+    <nav class="main-nav" aria-label="Primary navigation">
+      <a class="nav-link" data-route="home" href="#home"><span class="nav-icon">⌂</span> Dashboard</a>
+      <a class="nav-link" data-route="curriculum" href="#curriculum"><span class="nav-icon">▦</span> Curriculum</a>
+      <a class="nav-link" data-route="practice" href="#practice"><span class="nav-icon">◇</span> Practice lab</a>
+      <a class="nav-link" data-route="toolkit" href="#toolkit"><span class="nav-icon">⚒</span> Playbook toolkit</a>
+      <a class="nav-link" data-route="notes" href="#notes"><span class="nav-icon">▤</span> My notes</a>
+    </nav>
+    <div class="side-kicker course-kicker">YOUR COLLECTIONS</div>
+    <a href="#curriculum" class="collection-item"><span class="collection-symbol">♟</span><span>People & Leadership<small>4 chapters · 12 lessons</small></span><span class="collection-arrow">↗</span></a>
+    <div class="future-collection">◈ <span>Strategy & Growth</span><small>COMING NEXT</small></div>
+    <div class="future-collection">◈ <span>Sales & Marketing</span><small>PLANNED</small></div>
+    <div class="future-collection">◈ <span>Systems & Execution</span><small>PLANNED</small></div>
+    <div class="sidebar-spacer"></div>
+    <div class="side-progress"><div class="side-progress-heading"><span>YOUR PROGRESS</span><strong id="sidePercent">0%</strong></div><div class="progress-track"><div id="sideBar"></div></div><span id="progressCaption">0 / 12 lessons completed</span></div>
+    <div class="side-caption">An independent study project based on business interviews and practical management principles.</div>
+  </aside>
+  <div class="main-column">
+    <header class="topbar"><div class="topbar-left"><button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false">☰</button><span class="breadcrumbs" id="breadcrumbs">ACADEMY <span>/</span> DASHBOARD</span></div><div class="topbar-right"><span class="status-dot"></span><span class="desktop-label">PERSONAL LEARNING SPACE</span><span class="profile-avatar">DW</span></div></header>
+    <main id="content" tabindex="-1"></main>
+    <footer class="site-footer">BUSINESS MASTERY <span>·</span> LEARN DEEPLY. APPLY DELIBERATELY. <span>·</span> YOUR PROGRESS STAYS IN THIS BROWSER.</footer>
+  </div>
+</div>
+<div class="mobile-scrim" id="mobileScrim" hidden></div>
+<script src="content.js"></script>
+<script src="learning.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

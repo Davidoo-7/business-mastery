@@ -1,27 +1,65 @@
-# Business Mastery — Interactive Learning Library
+# Business Mastery — Learning Academy
 
-An elegant, static, mobile-friendly learning website for practical business concepts. The first collection is **People & Leadership**, based on notes from the Alex Hormozi × Steven Bartlett interview.
+An independent, static, responsive learning platform for mastering leadership, hiring, recruiting, culture, training, and building teams that scale. The first course is **People & Leadership**, structured around notes from an Alex Hormozi × Steven Bartlett interview. It is an educational interpretation, not an official or affiliated product.
 
-## Includes
-- 12 focused lessons on culture, feedback, training, hiring, recruiting, and delegation
-- Dedicated deep-dive on the consultant approach to executive recruiting
-- Knowledge checks with immediate feedback
-- Progress tracking and personal notes saved in browser localStorage
-- Search, category filters, learning path and notes export
-- Dark responsive design with no build step or framework dependencies
+## What's inside
+
+- Four guided chapters containing **12 lessons**.
+- Actionable principles and examples, based on the interview.
+- Knowledge checks **plus 12 realistic decision scenarios** with explanations and retries.
+- A practice lab for revisiting the scenarios independently.
+- Three editable worksheets: **Stop · Start · Keep**, **Consultant hiring canvas**, and **Document · Demonstrate · Duplicate**.
+- Persistent completions, knowledge-check answers, scenario progress, lesson reflections, and worksheet drafts via browser `localStorage`.
+- Automatic migration of existing progress from the original `business-mastery-v1` key to `business-mastery-v2`.
+- Exportable lesson notes; copyable worksheets.
+- Responsive navigation and keyboard-accessible controls.
 
 ## Run locally
-Open `index.html` in your browser. For a more reliable local preview use `python -m http.server 8000`, then visit `http://localhost:8000`.
 
-## GitHub Pages deployment
-1. Create a GitHub repository and upload `index.html`, `styles.css`, and `content.js` in the repository root.
-2. Under **Settings → Pages → Build and deployment**, choose **Deploy from a branch** and select `main` / `(root)`.
-3. GitHub Pages will give you the site URL once deployment completes.
+Open `index.html` in a browser, or from the project root:
 
-**Important:** GitHub Pages sites can be publicly accessible even when the repository is private depending on account/product setup. Do not publish private notes or internal company details without checking the visibility of the deployed site. The learning website works locally without publishing it.
+```bash
+python -m http.server 8000
+```
 
-## Editing lessons
-All content lives in the `lessons` array in `content.js`. Each lesson supports a module, title, tagline, takeaway, article sections, examples and a short multiple-choice knowledge check. The app is intentionally simple to maintain.
+Then open http://localhost:8000.
 
-## Attribution and scope
-This is an independent study aid paraphrasing concepts discussed in a podcast interview. It is not affiliated with, endorsed by, or published by the interview guests. The material includes interpretation and teaching examples. Claims and anecdotes should be checked against the source when used in formal training. 
+No packages, build process, server database, or accounts are necessary.
+
+## File structure
+
+```text
+business-mastery/
+├── index.html       # Application shell and navigation
+├── styles.css       # Responsive design system
+├── content.js       # Original 12-lesson source-derived content
+├── learning.js      # Chapter structure, practice cases, worksheet schemas
+├── app.js           # Navigation, interactive learning and browser state
+├── .gitignore
+└── README.md
+```
+
+## Progress and privacy
+
+Browser data is saved **only on the current device/browser**. It does not sync through GitHub and is not uploaded to a server. Export important notes regularly. Worksheet content can be copied for backup.
+
+## Recommended Git workflow
+
+From your local repository in Cursor:
+
+```bash
+git status
+git pull --ff-only
+# Copy the updated files into this folder (do not replace .git)
+git add index.html styles.css app.js learning.js README.md .gitignore
+git commit -m "feat: build interactive Business Mastery academy"
+git push origin main
+```
+
+When making further changes, **pull before editing** and inspect `git status` before staging. If `git pull --ff-only` rejects a merge, resolve the divergence rather than forcing a push.
+
+## Future directions
+
+- More collections: Strategy, Marketing, Sales, Finance, Systems.
+- Short mastery exercises and spaced review.
+- Optional authentication and cross-device sync **only if** that becomes worth the complexity.
